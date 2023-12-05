@@ -5,8 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> NENUNNA </title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        body <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> Nenunna </title>
+</head>
+<body>
+    <header>
+        <h1>Your Motivation Hub</h1>
+    </header>
+
+    <main>
+        <section id="motivation-section">
+            <h2>Daily Motivation</h2>
+            <p id="motivation-text">Replace this text with your motivational content.</p>
+            <button id="new-motivation-btn">Share your Thoughts </button>
+        </section>
+
+        <section id="quote-section">
+            <h2>Inspirational Quote</h2>
+            <p id="quote-text">Your present circumstances don't determine where you can go; they merely determine where you start</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Motivation Hub</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+            font-family: Arial, sans-serif;a
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -53,13 +86,13 @@
         <section>
             <h2>Featured Content</h2>
             <p>Explore our curated collection of motivational quotes, success stories, and tips to keep you motivated and focused.</p>
-            <!-- Add your featured content here -->
+            <!-- share your heart and make yourself feel better -->
         </section>
 
         <section>
             <h2>Get Started</h2>
             <p>Ready to take the first step? Set your goals, create a plan, and stay motivated throughout your journey.</p>
-            <!-- Add your getting started content here -->
+            <!-- start speaking your heart out -->
         </section>
     </main>
 
@@ -69,3 +102,75 @@
 
 </body>
 </html>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+document.addEventListener('DOMContentLoaded', function () {
+    // Replace these placeholder texts with your own motivational content and quotes
+    const motivations = ["Motivational content 1", "Motivational content 2", "Motivational content 3"];
+    const quotes = ["Quote 1", "Quote 2", "Quote 3"];
+
+    const motivationText = document.getElementById('motivation-text');
+    const quoteText = document.getElementById('quote-text');
+    const newMotivationBtn = document.getElementById('new-motivation-btn');
+
+    // Display random motivation and quote on page load
+    displayRandomContent();
+
+    // Event listener for the "Get New Motivation" button
+    newMotivationBtn.addEventListener('click', displayRandomContent);
+
+    function displayRandomContent() {
+        const randomMotivation = getRandomItem(motivations);
+        const randomQuote = getRandomItem(quotes);
+
+        motivationText.textContent = randomMotivation;
+        quoteText.textContent = randomQuote;
+    }
+
+    function getRandomItem(array) {
+        const randomIndex = Math.floor(Math.random() * array.length);
+        return array[randomIndex];
+    }
+});
